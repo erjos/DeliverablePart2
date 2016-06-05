@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -16,7 +17,9 @@ public class Dates {
 		LocalDate date1 = LocalDate.parse(value, formatter);
 		LocalDate date2 = LocalDate.parse(value2, formatter);
 		
-		System.out.println("your first date is: " + date1 + ". Your second date is: " + date2);
+		Period p = Period.between(date1, date2);
+		
+		System.out.println(p.getYears() + " years, " + p.getMonths() + " months, " + p.getDays() + " days.");
 		
 	}	
 }
