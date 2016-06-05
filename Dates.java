@@ -10,15 +10,19 @@ public class Dates {
 		System.out.println("Enter a date here (MM/dd/yyyy): ");
 		String value = input.nextLine();
 		
+		//Collect the second date
 		System.out.println("Enter a second date here (MM/dd/yyyy): ");
 		String value2 = input.nextLine();
 		
+		//Use the DateTimeFormatter class to convert the string into LocalDates
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 		LocalDate date1 = LocalDate.parse(value, formatter);
 		LocalDate date2 = LocalDate.parse(value2, formatter);
 		
+		//Use the Period statement to calculate the period between the two dates
 		Period p = Period.between(date1, date2);
 		
+		//use the getYears, Months and Days methods to print the period between the dates
 		System.out.println(p.getYears() + " years, " + p.getMonths() + " months, " + p.getDays() + " days.");
 		
 	}	
